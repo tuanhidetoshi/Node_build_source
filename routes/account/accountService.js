@@ -1,7 +1,7 @@
-const test = (req, res) => {
-    res.json({test: "test"});
+const createAccount = (req, res) => {
+    res.json(req.body)
 }
 
 module.exports = {
-    test
+    createAccount
 }

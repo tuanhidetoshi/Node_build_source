@@ -1,8 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
-const accountService = require('./accountService')
+const accountService = require('./accountService');
 
-router.get('/', accountService.test)
+const validation = require('../../middlewares/validation/validation');
+const account = require('../../middlewares/validation/account');
 
-module.exports = router
+router.post('/', [validation(account)], accountService.createAccount);
+
+module.exports = router;

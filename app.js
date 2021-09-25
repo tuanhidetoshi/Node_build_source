@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
     res.json({status: 'UP'})
 })
 
-app.use(routes)
+app.use('/api', routes)
 
 const _PORT = process.env.PORT
 
